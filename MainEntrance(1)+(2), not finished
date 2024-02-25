@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(''); /*Kan lasim tmuna*/
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .buttons button:hover {
+            background-color: #ccc;
+        }
+
+        /* Popup box styles */
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MyTown</h1>
+        <p>Welcome to MyTown. Here, you'll be able to provide us with your complaints regarding your city/town; in an easily manageable manner!</p>
+        <div class="buttons">
+            <button>Civilian</button>
+            <button>Worker</button>
+            <button>Manager</button>
+            <button id="report-issue-btn">Report an Issue</button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-container">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">X</span>
+            <h2>Report an Issue</h2>
+            <textarea id="issue-text" rows="4" cols="50"></textarea>
+            <button onclick="submitIssue()">Submit</button>
+        </div>
+    </div>
+
+</body>
+</html>
