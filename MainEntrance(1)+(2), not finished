@@ -32,19 +32,18 @@
         .buttons {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 20px; /* Add some space between buttons and popup */
+            margin-bottom: 20px;
         }
-        .buttons a {
+        .buttons button {
             padding: 10px 20px;
             font-size: 1em;
-            background-color: #fff;
-            color: #000;
+            background-color: #1E90F1;
+            color: #000000;
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            text-decoration: none; /* Remove default underline */
         }
-        .buttons a:hover {
+        .buttons button:hover {
             background-color: #ccc;
         }
 
@@ -80,9 +79,9 @@
         <h1>MyTown</h1>
         <p>Welcome to MyTown. Here, you'll be able to provide us with your complaints regarding your city/town; in an easily manageable manner!</p>
         <div class="buttons">
-            <a href="/civilian">Civilian</a>
-            <a href="/worker">Worker</a>
-            <a href="/manager">Manager</a>
+            <button>Civilian</button>
+            <button>Worker</button>
+            <button>Manager</button>
             <button id="report-issue-btn">Report an Issue</button>
         </div>
     </div>
@@ -91,10 +90,9 @@
         <div class="popup-content">
             <span class="close-btn" onclick="closePopup()">X</span>
             <h2>Report an Issue</h2>
-            <textarea id="issue-text" rows="4" cols="50" maxlength="80"></textarea>
+            <textarea id="issue-text" rows="4" cols="50"></textarea>
             <button onclick="submitIssue()">Submit</button>
         </div>
     </div>
-
 </body>
 </html>
