@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url(''); /*Kan lasim tmuna*/
+            background-image: url('assets/images/background.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -32,8 +32,9 @@
         .buttons {
             display: flex;
             justify-content: space-around;
+            margin-bottom: 20px; /* Add some space between buttons and popup */
         }
-        .buttons button {
+        .buttons a {
             padding: 10px 20px;
             font-size: 1em;
             background-color: #fff;
@@ -41,12 +42,12 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            text-decoration: none; /* Remove default underline */
         }
-        .buttons button:hover {
+        .buttons a:hover {
             background-color: #ccc;
         }
 
-        /* Popup box styles */
         .popup-container {
             display: none;
             position: fixed;
@@ -79,9 +80,9 @@
         <h1>MyTown</h1>
         <p>Welcome to MyTown. Here, you'll be able to provide us with your complaints regarding your city/town; in an easily manageable manner!</p>
         <div class="buttons">
-            <button>Civilian</button>
-            <button>Worker</button>
-            <button>Manager</button>
+            <a href="/civilian">Civilian</a>
+            <a href="/worker">Worker</a>
+            <a href="/manager">Manager</a>
             <button id="report-issue-btn">Report an Issue</button>
         </div>
     </div>
@@ -90,7 +91,7 @@
         <div class="popup-content">
             <span class="close-btn" onclick="closePopup()">X</span>
             <h2>Report an Issue</h2>
-            <textarea id="issue-text" rows="4" cols="50"></textarea>
+            <textarea id="issue-text" rows="4" cols="50" maxlength="80"></textarea>
             <button onclick="submitIssue()">Submit</button>
         </div>
     </div>
